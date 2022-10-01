@@ -1,0 +1,18 @@
+{
+  "name": "shalltear",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "R0dn3yS",
+  "license": "ISC",
+  "dependencies": {
+    "ascii-table": "^0.0.9",
+    "common-tags": "^1.8.2",
+    "discord.js": "^14.5.0",
+    "dotenv": "^16.0.2",
+    "fs": "^0.0.1-security"
+  }
+}
