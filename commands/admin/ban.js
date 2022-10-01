@@ -5,6 +5,8 @@ module.exports = {
   name: 'ban',
   description: 'Bans a user',
   run: async (client, message, args) => {
+    if (!client.admins.includes(message.author.id)) return message.channel.send('You do not have permission for this command.');
+
     args.shift();
 
     const bUser = message.mentions.users.first();

@@ -21,6 +21,7 @@ const client = new Client({
 client.commands = new Collection();
 client.aliases = new Collection();
 client.categories = readdirSync('./commands/');
+client.admins = ['325254775828512778', '708544768342229012', '245592600793317377'];
 
 ['command'].forEach(handler => {
   require(`./handlers/${handler}`)(client);
