@@ -86,6 +86,12 @@ client.on('messageCreate', async message => {
   }
 });
 
+client.on('messageCreate', message => {
+  if (message.content === ':3' || message.content.toLowerCase() === 'x3') {
+    message.channel.send('https://cdn.discordapp.com/attachments/791792018111725588/1028999258134810664/Bout_hitem_with_this_furry_shit___Animation_rlkSMp7iz6c.mp4');
+  }
+});
+
 client.on('messageDelete', async (message) => {
   if (message.channel.name === 'quotes') return;
   if (message.content.length > 1000) return;
