@@ -125,9 +125,11 @@ client.on('messageUpdate', async (oldMessage, newMessage) => {
   return eLog.send({ embeds: [eEmbed] });
 });
 
-client.on('guildMemberAdd', async (_member) => {
+client.on('guildMemberAdd', async (member) => {
   memberCount += 1;
   countChannel.edit({ name: `Members: ${memberCount}` });
+
+  member.roles.add('789192241087512687');
 });
 
 client.on('guildMemberRemove', async (_member) => {
