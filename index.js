@@ -89,10 +89,18 @@ client.on('messageCreate', async message => {
 client.on('messageCreate', message => {
   if (message.content.includes(':3') || message.content.toLowerCase().includes('x3')) {
     message.channel.send({
-        files: [{
+      files: [{
         attachment: './furry.mp4',
         name: 'furry.mp4',
       }],
+    });
+  }
+
+  if (message.author.id === '268401778251268137' && message.content.toLowerCase().includes('cnc')) {
+    message.channel.send({
+      files: [{
+        attachment: './bonk.gif',
+      }]
     });
   }
 });
