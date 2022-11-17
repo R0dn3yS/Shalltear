@@ -105,7 +105,7 @@ client.on('messageCreate', message => {
   }
 
   if (message.author.id === '268401778251268137') {
-    if (Math.ceil(Math.random() * 100) === 1) {
+    if (Math.ceil(Math.random() * 50) === 1) {
       message.channel.send(`"${message.content}" <:dubbie:1039928554760196196>`);
     }
   }
