@@ -20,7 +20,7 @@ module.exports = {
       return message.reply('Please provide a reason.');
     }
 
-    bMember.ban(reason).catch((e) => {
+    bMember.ban({ reason: reason }).catch((e) => {
       console.error(e);
       return message.reply('I cannot ban this user');
     });
