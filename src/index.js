@@ -18,9 +18,9 @@ const client = new Client({
   intents: myIntents,
 });
 
-client.commands = new Collection();
+client.commands  = new Collection();
 client.aliases = new Collection();
-client.categories = readdirSync('./commands/');
+client.categories = readdirSync('src/commands/');
 client.admins = ['325254775828512778', '708544768342229012', '245592600793317377'];
 
 ['command'].forEach(handler => {
@@ -90,7 +90,7 @@ client.on('messageCreate', message => {
   if (message.content.includes(':3') || message.content.toLowerCase().includes('x3')) {
     message.channel.send({
       files: [{
-        attachment: './furry.mp4',
+        attachment: 'assets/furry.mp4',
         name: 'furry.mp4',
       }],
     });
@@ -99,7 +99,7 @@ client.on('messageCreate', message => {
   if (message.author.id === '268401778251268137' && message.content.toLowerCase().includes('cnc')) {
     message.channel.send({
       files: [{
-        attachment: './bonk.gif',
+        attachment: 'assets/bonk.gif',
       }]
     });
   }
