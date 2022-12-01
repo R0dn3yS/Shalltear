@@ -40,6 +40,8 @@ client.once('ready', () => {
   countChannel = client.channels.resolve('947819208518008874');
   memberCount = countChannel.guild.memberCount;
   countChannel.edit({ name: `Members: ${memberCount}` });
+
+  client.channels.resolve('1048013327768506368').send('I have restarted.');
 });
 
 client.on('messageCreate', async message => {
