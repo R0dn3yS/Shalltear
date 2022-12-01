@@ -109,6 +109,10 @@ client.on('messageCreate', message => {
       message.channel.send(`"${message.content}" <:dubbie:1039928554760196196>`);
     }
   }
+
+  if (message.content.toLowerCase().includes('enigste')) {
+    message.reply('Enige*');
+  }
 });
 
 client.on('messageDelete', async (message) => {
