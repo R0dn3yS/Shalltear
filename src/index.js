@@ -89,6 +89,8 @@ client.on('messageCreate', async message => {
 });
 
 client.on('messageCreate', message => {
+  if (message.author.bot) return;
+
   if (message.author.id === '268401778251268137' && message.content.toLowerCase().includes('cnc')) {
     message.channel.send({
       files: [{
@@ -103,7 +105,7 @@ client.on('messageCreate', message => {
     }
   }
 
-  if (message.content.toLowerCase().includes('enigste')) {
+  if (message.content.toLowerCase().replace('\*\*', '').includes('enigste')) {
     message.reply('Enige*');
   }
 });
