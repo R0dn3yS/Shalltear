@@ -8,8 +8,13 @@ const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 dotenv.config()
 
 const prefix = '\\';
+
 let memberCount;
 let countChannel;
+
+let messageCount;
+let messageChannel;
+
 
 const myIntents = new IntentsBitField();
 myIntents.add(3276799);
@@ -40,6 +45,9 @@ client.once('ready', () => {
   countChannel = client.channels.resolve('947819208518008874');
   memberCount = countChannel.guild.memberCount;
   countChannel.edit({ name: `Members: ${memberCount}` });
+
+  messageChannel = client.channels.resolve('1052651555532316842');
+  messageCount = parseInt(messageChannel.name.split(' ')[1]);
 
   client.channels.resolve('1048013327768506368').send('I have restarted.');
 });
@@ -130,6 +138,9 @@ client.on('messageDelete', async (message) => {
 });
 
 client.on('messageUpdate', async (oldMessage, newMessage) => {
+  messageCount++;
+  messageChannel.edit({ name: `Message: ${messageCount}` });
+
   if (oldMessage.content === newMessage.content) return;
   if (oldMessage.length + newMessage.length > 1000) return;
 
