@@ -48,6 +48,7 @@ client.once('ready', () => {
 
   messageChannel = client.channels.resolve('1052651555532316842');
   messageCount = parseInt(messageChannel.name.split(' ')[1]);
+  console.log(messageCount);
 
   client.channels.resolve('1048013327768506368').send('I have restarted.');
 });
@@ -99,6 +100,9 @@ client.on('messageCreate', async message => {
 client.on('messageCreate', message => {
   if (message.author.bot) return;
 
+  messageCount++;
+  messageChannel.edit({ name: `Message: ${messageCount}` });
+
   if (message.author.id === '268401778251268137' && message.content.toLowerCase().includes('cnc')) {
     message.channel.send({
       files: [{
@@ -138,9 +142,6 @@ client.on('messageDelete', async (message) => {
 });
 
 client.on('messageUpdate', async (oldMessage, newMessage) => {
-  messageCount++;
-  messageChannel.edit({ name: `Message: ${messageCount}` });
-
   if (oldMessage.content === newMessage.content) return;
   if (oldMessage.length + newMessage.length > 1000) return;
 
