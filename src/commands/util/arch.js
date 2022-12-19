@@ -1,7 +1,9 @@
 module.exports = {
   name: 'arch',
   description: 'Search archwiki',
-  run: (_client, message, args) => {
-    return message.channel.send('https://wiki.archlinux.org/index.php?search=' + args.join('+'));
+  run: async (_client, message, args) => {
+    const url = 'https://wiki.archlinux.org/index.php?search=';
+    const newUrl = await fetch(url).then(res => res.url);
+    return message.channel.send(newUrl);
   }
 }
