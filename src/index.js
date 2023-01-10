@@ -12,9 +12,6 @@ const prefix = '\\';
 let memberCount;
 let countChannel;
 
-let messageCount;
-let messageChannel;
-
 
 const myIntents = new IntentsBitField();
 myIntents.add(3276799);
@@ -45,10 +42,6 @@ client.once('ready', () => {
   countChannel = client.channels.resolve('947819208518008874');
   memberCount = countChannel.guild.memberCount;
   countChannel.edit({ name: `Members: ${memberCount}` });
-
-  messageChannel = client.channels.resolve('1052651555532316842');
-  messageCount = parseInt(messageChannel.name.split(' ')[1]);
-  console.log(messageCount);
 
   client.channels.resolve('1048013327768506368').send('I have restarted.');
 });
@@ -99,9 +92,6 @@ client.on('messageCreate', async message => {
 
 client.on('messageCreate', message => {
   if (message.author.bot) return;
-
-  messageCount++;
-  messageChannel.edit({ name: `Message: ${messageCount}` });
 
   if (message.author.id === '268401778251268137' && message.content.toLowerCase().includes('cnc')) {
     message.channel.send({
