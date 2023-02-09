@@ -93,14 +93,6 @@ client.on('messageCreate', async message => {
 client.on('messageCreate', message => {
   if (message.author.bot) return;
 
-  if (message.author.id === '268401778251268137' && message.content.toLowerCase().includes('cnc')) {
-    message.channel.send({
-      files: [{
-        attachment: 'assets/bonk.gif',
-      }]
-    });
-  }
-
   if (message.author.id === '268401778251268137') {
     if (Math.ceil(Math.random() * 50) === 1) {
       message.channel.send(`"${message.content}" <:dubbie:1039928554760196196>`);
