@@ -97,6 +97,10 @@ client.on('messageCreate', message => {
     if (Math.ceil(Math.random() * 50) === 1) {
       message.channel.send(`"${message.content}" <:dubbie:1244615364457926777>`);
     }
+
+    if (message.content.includes('er zit een man') || message.content.includes('er zit iemand')) {
+      message.channel.send('Dubbie er zit niemand.');
+    }
   }
 
   if (message.content.toLowerCase().replace('\*\*', '').includes('enigste')) {
